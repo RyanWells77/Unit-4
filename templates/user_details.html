@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block main %}
+
+    <h1>User Details</h1>
+    <h2>User Information</h2>
+    <p>User ID: {{ user.id }}</p>
+    <p>User Name: {{ user.name }}</p>
+
+    <h2>Teams</h2>
+    <ul>
+      {% for team in teams %}
+      <h3>{{ team.team_name }}</h3>
+      <p>{{ team.project.project_name }}</p>
+      {% endfor %}
+    </ul>
+
+    <h2>Projects</h2>
+    <ul>
+      {% for project in projects %}
+      <li>{{ project.name }}</li>
+      {% endfor %}
+    </ul>
+{% endblock %}
